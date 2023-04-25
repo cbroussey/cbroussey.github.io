@@ -48,7 +48,6 @@ table {
 }
 
 
-
 @font-face {
     font-family: 'izayoi';
     src: url('polices/izayoimonospaced-nwoy-webfont.woff2') format('woff2'),
@@ -93,6 +92,7 @@ table {
 
 }
 
+
 html, body {
     background-color: #111;
     width: 100%;
@@ -123,6 +123,7 @@ html, body {
 .tab {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
     padding: 0.5em 2em;
     margin-right: 1em;
@@ -192,10 +193,16 @@ html, body {
     list-style-type: none;
     font-size: 1.2em;
     height: 30%;
+    margin-top: 20px;
+    padding-left: 2em;
     scroll-behavior: smooth;
     overflow: hidden;
     -ms-overflow-style: none; /* Internet Explorer, Edge */
     scrollbar-width: none; /* Firefox */
+}
+
+#cmd > li {
+    padding: 2px;
 }
 
 element::-webkit-scrollbar {
@@ -219,5 +226,6 @@ article {
 article > h1 {
     text-transform: capitalize;
     font-size: 5em;
+    font-weight: bold;
     margin: 0;
 }
