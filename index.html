@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>Colin Broussey</title>
+	<link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body onload="main()">
+    <div id="console">
+        <nav id="navigation">
+            <li class="tab"><a href="#">Accueil</a></li>
+            <li class="tab"><a href="#">Projets</a></li>
+            <li class="tab"><a href="#">CV</a></li>
+            <li class="tab"><a href="#">Contact</a></li>
+            <li class="button" onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'});"><img src="images/minimize.svg"></li>
+            <li class="button" onclick="location.href = ''"><img src="images/close.svg"></li>
+        </nav>
+        <ul id="cmd">
+            <li>colin.broussey@portfolio ~ $ _</li>
+        </ul>
+    </div>
+    <section>
+        <img id="wave" src="images/wave.svg">
+        <article id="content">
+            <h1>Colin Broussey</h1>
+            <h2>Ceci est mon site web</h2>
+        </article>
+    </section>
+</body>
+</html>
