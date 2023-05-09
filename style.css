@@ -103,7 +103,7 @@ html, body {
 #console {
     position: absolute;
     width: 94%;
-    height: 700px;
+    height: 90%;
     left: 3%;
     top: 2%;
     background-color: #777;
@@ -218,6 +218,7 @@ element::-webkit-scrollbar {
 }
 
 article {
+    font-family: 'hack';
     position: absolute;
     top: 50%;
     color: white;
