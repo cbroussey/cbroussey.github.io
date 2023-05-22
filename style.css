@@ -94,20 +94,31 @@ table {
 
 
 html, body {
-    background-color: #111;
+    background-color: #282a37;
     width: 100%;
     height: 100%;
     margin: 0;
 }
 
+body {
+    background: linear-gradient(
+        to bottom right,
+        #121212 0%,
+        #282a37 20%,
+        #333 50%
+    );
+}
+
 #console {
     position: absolute;
     width: 94%;
-    height: 90%;
+    height: 700px;
     left: 3%;
     top: 2%;
-    background-color: #777;
+    background-color: #171717;
+    color: #eff1f5;
     border-radius: 30px;
+    box-shadow: -10px -10px 5px #191919;
 }
 
 #navigation {
@@ -209,24 +220,44 @@ element::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
 
-#wave {
-    position: absolute;
-    top: 40%;
+#wavecontainer {
     width: 100%;
-    /* height: 60%; */
     overflow: hidden;
 }
 
+#wave {
+    /* position: absolute; */
+    /* top: 40%; */
+    width: 250%;
+    /* height: 60%; */
+    position: relative;
+    margin-top: 21%;
+    overflow: hidden;
+    z-index: 1;
+}
+
 article {
-    font-family: 'hack';
-    position: absolute;
-    top: 50%;
+    position: relative;
+    /* top: 50%; */
+    width: 90%;
+    height: 90%;
+    padding: 1em;
     color: white;
 }
 
 article > h1 {
+    position: inherit;
+    font-family: "vanilla_extract";
     text-transform: capitalize;
-    font-size: 5em;
+    font-size: 7em;
+    width: 10%;
     font-weight: bold;
-    margin: 0;
+    margin: 10px;
+    z-index: 5;
 }
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+

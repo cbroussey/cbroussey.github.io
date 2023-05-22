@@ -1,10 +1,12 @@
+const titles = ["Colin Broussey", "Projets", "CV", "Contact"]
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function main() {
     // document.getElementById("wave").setAttribute("viewBox", `0 0 1440 ${Math.ceil(60*window.innerHeight/100)}`); 
-    window.currentTab = 0;
+    window.currentTab = 1;
     window.tabs = document.getElementsByClassName("tab")
     tabs[0].style.backgroundColor = "rgba(255, 255, 255, 0.3)"
     for(let i = 0; i < tabs.length; i++) {
@@ -28,6 +30,7 @@ function main() {
         setTimeout(blink, delay)
     }
     blink()
+    setTab(0)
 }
 
 async function write(text, speed) {
@@ -55,5 +58,8 @@ async function setTab(tab) {
         window.blink = false
         cmd = document.getElementById("cmd")
         await write(`cd ${window.tabs[tab].children[0].innerHTML}`, 30)
+        //let contenu = await fetch(`${titles[tab]}.html`)
+
+        document.querySelector("#content").innerHTML = `<h1>${titles[tab]}</h1>\n<iframe src="${titles[tab]}.html"></iframe>`
     }
 }
