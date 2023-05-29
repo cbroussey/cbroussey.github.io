@@ -93,24 +93,41 @@ table {
 }
 
 
+:root {
+    --animSpeed: 0.5s;
+}
+
+
 html, body {
-    background-color: #111;
+    background-color: #282a37;
     width: 100%;
     height: 100%;
     margin: 0;
 }
 
+body {
+    background: linear-gradient(
+        to bottom right,
+        #121212 0%,
+        #282a37 20%,
+        #333 50%
+    );
+}
+
 #console {
     position: absolute;
     width: 94%;
-    height: 90%;
+    height: 700px;
     left: 3%;
     top: 2%;
-    background-color: #777;
+    background-color: #171717;
+    color: #eff1f5;
     border-radius: 30px;
+    box-shadow: -10px -10px 5px #191919;
 }
 
 #navigation {
+    position: relative;
     display: flex;
     flex-direction: row;
     list-style-type: none;
@@ -118,6 +135,7 @@ html, body {
     border-radius: 30px 30px 0 0;
     margin: 0;
     padding: 1em;
+    z-index: 10;
 }
 
 .tab {
@@ -132,7 +150,7 @@ html, body {
     text-align: center;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.3);
-    transition: background-color 0.5s ease 0ms;
+    transition: background-color var(--animSpeed) ease 0ms;
 }
 
 .tab > a {
@@ -157,6 +175,7 @@ html, body {
     flex-direction: row;
     flex-basis: 45.6px;
     flex-grow: 0;
+    flex-shrink: 0;
     text-align: center;
     margin-left: auto;
     width: auto;
@@ -164,7 +183,13 @@ html, body {
     justify-content: center;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.3);
-    transition: background-color 0.5s ease 0ms;
+    transition: background-color var(--animSpeed) ease 0ms;
+}
+
+.button:first-of-type {
+    display: none;
+    margin-right: auto;
+    margin-left: 0;
 }
 
 .button:last-of-type {
@@ -178,6 +203,10 @@ html, body {
 
 .tab:hover {
     background-color: rgba(255, 255, 255, 0.3);
+}
+
+.button:first-of-type:hover {
+    background-color: #1e66f5;
 }
 
 .button:hover {
@@ -205,28 +234,133 @@ html, body {
     padding: 2px;
 }
 
-element::-webkit-scrollbar {
+#cmd::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
 
+section {
+    overflow-x: hidden;
+}
+
+#wavecontainer {
+    position: relative;
+    margin-top: 20em;
+    overflow-x: hidden;
+    overflow-y: visible;
+    z-index: 1;
+}
+
 #wave {
-    position: absolute;
-    top: 40%;
-    width: 100%;
-    /* height: 60%; */
+    /* position: absolute; */
+    /* top: 40%; */
+    position: relative;
+    width: 250%;
     overflow: hidden;
+    z-index: 10;
 }
 
 article {
-    font-family: 'hack';
-    position: absolute;
-    top: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: -0.2em;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
     color: white;
 }
 
-article > h1 {
+.content {
+    z-index: 10;
+    /* transform: translateY(-20em); */
+    background-color: #9393c8;
+}
+
+.content > h1, #wavecontainer > h1 {
+    position: absolute;
+    top: 0.7em;
+    font-family: "vanilla_extract";
     text-transform: capitalize;
-    font-size: 5em;
+    font-size: 7vw;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 10%;
+    height: 10%;
     font-weight: bold;
-    margin: 0;
+    margin-left: 1em;
+    z-index: 15;
+    color: #eff1f5;
+}
+
+
+#page0 > img {
+    width: 20%;
+    border-radius: 100%;
+    
+}
+
+#page0 > img + p {
+    float: left;
+}
+
+.enterLeft {
+    animation: rightSlide var(--animSpeed) ease-in reverse;
+}
+
+.exitLeft {
+    animation: rightSlide var(--animSpeed) ease-in normal;
+}
+
+.enterRight {
+    animation: leftSlide var(--animSpeed) ease-in reverse;
+}
+
+.exitRight {
+    animation: leftSlide var(--animSpeed) ease-in normal;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(2em);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes leftSlide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(2em);
+    }
+}
+
+@keyframes rightSlide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-2em);
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .tab {
+        display: none;
+    }
+
+    .button:first-of-type {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #cmd {
+        font-size: 0.8em;
+    }
 }

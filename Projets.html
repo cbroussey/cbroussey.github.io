@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<figure>
+    <img src="images/puissance4.gif">
+    <figcaption>Puissance 4 et IA</figcaption>
+</figure>
+<figure>
+    <img src="images/pdf.gif">
+    <figcaption>Automatisation de PDF</figcaption>
+</figure>
+<figure>
+    <img src="images/web.gif"> <!-- python maths cavalier, apache (pas encore), team building-->
+    <figcaption>Réalisation d'un site web</figcaption>
+</figure>
+<figure>
+    <img src="images/bdd.gif">
+    <figcaption>Création de Base De Données</figcaption>
+</figure>
+<figure>
+    <img src="images/team.gif">
+    <figcaption>Organisation d'une équipe</figcaption>
+</figure>
+<!--
+<figure>
+    <img src="images/apache.gif">
+    <figcaption>Gestion d'un serveur Apache</figcaption>
+</figure>
+-->
+<style>
+    body > * {
+        opacity: 0;
+    }
+
+    @keyframes slide-in {
+        from {
+            transform: translateY(1.5em);
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+</style>
+<script defer>
+    let lines = document.querySelectorAll("body > *")
+    async function animate(i = 0) {
+        if (i < lines.length) {
+            console.log(lines[i])
+            document.querySelectorAll("body > *")[i].style.animation = "slide-in .8s ease-in-out both"
+            setTimeout(function(){ animate(i + 1) }, 50)
+        }
+    }
+    document.onload = animate()
+</script>
