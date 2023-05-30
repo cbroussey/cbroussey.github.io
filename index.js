@@ -8,7 +8,7 @@ function main() {
     // document.getElementById("wave").setAttribute("viewBox", `0 0 1440 ${Math.ceil(60*window.innerHeight/100)}`); 
     window.currentTab = 1;
     window.tabs = document.getElementsByClassName("tab")
-    tabs[0].style.backgroundColor = "rgba(255, 255, 255, 0.3)"
+    tabs[0].style.backgroundColor = "rgba(255, 255, 255, 0.5)"
     for(let i = 0; i < tabs.length; i++) {
         tabs[i].style.cursor = "pointer"
         tabs[i].onclick = function(){ setTab(i) }
@@ -54,7 +54,7 @@ async function setTab(tab) {
     if(tab != window.currentTab && !window.writing) {
         window.tabs[window.currentTab].style.backgroundColor = ""
         window.currentTab = tab
-        window.tabs[window.currentTab].style.backgroundColor = "rgba(255, 255, 255, 0.3)"
+        window.tabs[window.currentTab].style.backgroundColor = "rgba(255, 255, 255, 0.5)"
         window.blink = false
         cmd = document.getElementById("cmd")
         await write(`cd ${window.tabs[tab].children[0].innerHTML}`, 30)
