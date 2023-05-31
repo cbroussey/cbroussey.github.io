@@ -110,17 +110,18 @@ body {
         to bottom right,
         #121212 0%,
         #282a37 20%,
-        #333 50%
+        #333 50%,
+        #445 100%
     );
 }
 
 #console {
     position: absolute;
     width: 94%;
-    height: 700px;
+    height: 90%;
     left: 3%;
     top: 2%;
-    background-color: #171717;
+    background-color: #282828;
     color: #eff1f5;
     border-radius: 30px;
     box-shadow: -10px -10px 5px #191919;
@@ -131,11 +132,17 @@ body {
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    background-color: #AAA;
+    background-color: #282828;
     border-radius: 30px 30px 0 0;
     margin: 0;
     padding: 1em;
     z-index: 10;
+}
+
+#tabs {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
 }
 
 .tab {
@@ -145,12 +152,16 @@ body {
     justify-content: center;
     padding: 0.5em 2em;
     margin-right: 1em;
+    /* min-width: 2em; */
+    max-width: 220px;
     flex-basis: 220px;
-    flex-grow: 0;
+    flex-grow: 1;
+    max-height: 2em;
     text-align: center;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(127, 127, 127, 0.3);
     transition: background-color var(--animSpeed) ease 0ms;
+    cursor: pointer;
 }
 
 .tab > a {
@@ -159,7 +170,7 @@ body {
     font-weight: 400;
     font-size: 23px;
     text-decoration: none;
-    color: #111;
+    color: #eff1f5;
 }
 
 .button {
@@ -182,8 +193,9 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(127, 127, 127, 0.3);
     transition: background-color var(--animSpeed) ease 0ms;
+    cursor: pointer;
 }
 
 .button:first-of-type {
@@ -199,10 +211,11 @@ body {
 .button > img {
     width: 100%;
     height: 100%;
+    filter: invert(97%) sepia(8%) saturate(134%) hue-rotate(186deg) brightness(99%) contrast(93%);
 }
 
 .tab:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .button:first-of-type:hover {
@@ -261,25 +274,32 @@ section {
 
 article {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
     position: relative;
-    margin-top: -0.2em;
-    width: 100%;
+    margin-top: -0.4vh;
+    width: calc(100% - 2em);
     height: 100%;
     padding: 1em;
     color: white;
+    font-family: "futura";
+    font-weight: 400;
+    font-size: 1.5vw;
+    text-align: justify;
 }
 
 .content {
     z-index: 10;
     /* transform: translateY(-20em); */
-    background-color: #9393c8;
+    background-color: #63b9e6;
 }
 
 .content > h1, #wavecontainer > h1 {
     position: absolute;
     top: 0.7em;
-    font-family: "vanilla_extract";
+    font-family: "Helvetica";
     text-transform: capitalize;
     font-size: 7vw;
     flex-grow: 1;
@@ -292,7 +312,6 @@ article {
     color: #eff1f5;
 }
 
-
 #page0 > img {
     width: 20%;
     border-radius: 100%;
@@ -300,7 +319,67 @@ article {
 }
 
 #page0 > img + p {
-    float: left;
+    float: right;
+    clear: right;
+    flex-basis: 70%;
+    margin-left: 2em;
+    text-align: justify;
+}
+
+#page1 > figure {
+    border-radius: 1em;
+    text-align: center;
+    padding: 1em;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    min-width: 200px;
+    max-width: 1000px;
+    width: 25%;
+    height: 110%;
+    margin: 1em;
+    transition: background-color var(--animSpeed) ease-out/*, transform var(--animSpeed) ease-out*/;
+}
+
+#page1 > figure:hover {
+    background-color: rgba(127, 127, 127, 0.3);
+    transform: translateY(-1em);
+}
+
+#page1 > figure > img {
+    width: 100%;
+    height: 100%;
+}
+
+#page1 > figure > figcaption {
+    font-size: 15px;
+}
+
+iframe {
+    border-radius: 0.5em;
+    width: 95vw;
+    height: 25em;
+    margin-top: 1em;
+}
+
+#page2 > a {
+    align-self: center;
+}
+
+#page2 > a > button {
+    font-size: 1.5em;
+    color: #fff;
+    background-color: #0d6efd;
+    border: 1px solid #0d6efd;
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#page2 > a > .button:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
 }
 
 .enterLeft {
@@ -350,17 +429,26 @@ article {
 }
 
 @media screen and (max-width: 920px) {
-    .tab {
-        display: none;
-    }
-
     .button:first-of-type {
         display: flex;
+    }
+
+    #tabs {
+        display: none;
+        flex-direction: column;
     }
 }
 
 @media screen and (max-width: 600px) {
+    .tab > a {
+        font-size: 0.8em;
+    }
+
     #cmd {
         font-size: 0.8em;
+    }
+
+    #page2 > a > button {
+        font-size: 1em;
     }
 }
