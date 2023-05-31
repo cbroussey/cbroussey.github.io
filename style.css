@@ -307,7 +307,7 @@ article {
     width: 10%;
     height: 10%;
     font-weight: bold;
-    margin-left: 1em;
+    margin-left: 0.8em;
     z-index: 15;
     color: #eff1f5;
 }
@@ -380,6 +380,10 @@ iframe {
 #page2 > a > .button:hover {
     background-color: #0b5ed7;
     border-color: #0a58ca;
+}
+
+#page3 > a {
+    margin: 0.5em;
 }
 
 .enterLeft {
