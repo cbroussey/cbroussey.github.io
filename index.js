@@ -10,13 +10,13 @@ function main() {
     // document.getElementById("wave").setAttribute("viewBox", `0 0 1440 ${Math.ceil(60*window.innerHeight/100)}`); 
     window.currentTab = 1;
     window.tabs = document.getElementsByClassName("tab")
-    tabs[0].style.backgroundColor = "rgba(255, 255, 255, 0.3)"
+    tabs[0].style.backgroundColor = "rgba(255, 255, 255, 0.4)"
     for(let i = 0; i < tabs.length; i++) {
-        tabs[i].style.cursor = "pointer"
+        // tabs[i].style.cursor = "pointer"
         tabs[i].onclick = function(){ setTab(i) }
     }
-    window.buttons = document.getElementsByClassName("button")
-    for(let i = 0; i < buttons.length; i++) buttons[i].style.cursor = "pointer"
+    // window.buttons = document.getElementsByClassName("button")
+    // for(let i = 0; i < buttons.length; i++) buttons[i].style.cursor = "pointer"
     let prompt = "colin.broussey@portfolio ~ $ "
     let command = document.getElementById("cmd")
     let delay = 800
@@ -57,7 +57,7 @@ async function setTab(tab) {
         window.tabs[window.currentTab].style.backgroundColor = ""
         // let titre = document.querySelector(`#page${window.currentTab} > h1`)
         let titre = document.querySelector("#wavecontainer > h1")
-        window.tabs[tab].style.backgroundColor = "rgba(255, 255, 255, 0.3)"
+        window.tabs[tab].style.backgroundColor = "rgba(255, 255, 255, 0.4)"
         window.blink = false
         cmd = document.getElementById("cmd")
         // let contenu = await fetch(`${titles[tab]}.html`)
@@ -87,6 +87,21 @@ async function setTab(tab) {
             window.currentTab = tab
         }, animSpeed)
         await write(`cd ${window.tabs[tab].children[0].innerHTML}`, 30)
+    }
+    if(document.querySelector('#tabs').style.display) {
+        document.querySelector('#tabs').style.display = "";
+        document.querySelector('.button:first-of-type').style.display = "flex";
+    }
+}
+
+function hamburgerMenu(open) {
+    if(!document.querySelector('#tabs').style.display) {
+        // document.querySelector('.button:first-of-type').style.display = "";
+        document.querySelector('#tabs').style.display = "flex";
+    }
+    else {
+        document.querySelector('#tabs').style.display = "";
+        // document.querySelector('.button:first-of-type').style.display = "flex";
     }
 }
 
