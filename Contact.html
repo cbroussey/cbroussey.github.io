@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<a href="mailto:colin.broussey@proton.me">E-Mail : colin.broussey@proton.me</a>
+<address href="phone:0625155904"></address>
+<style>
+    body > * {
+        opacity: 0;
+    }
+
+    @keyframes slide-in {
+        from {
+            transform: translateY(1.5em);
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+    iframe {
+        width: 100%;
+    }
+</style>
+<script defer>
+    let lines = document.querySelectorAll("body > *")
+    async function animate(i = 0) {
+        if (i < lines.length) {
+            console.log(lines[i])
+            document.querySelectorAll("body > *")[i].style.animation = "slide-in .8s ease-in-out both"
+            setTimeout(function(){ animate(i + 1) }, 50)
+        }
+    }
+    document.onload = animate()
+</script>

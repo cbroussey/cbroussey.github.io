@@ -118,7 +118,8 @@ body {
 #console {
     position: absolute;
     width: 94%;
-    height: 90%;
+    height: 115vw;
+    max-height: 700px;
     left: 3%;
     top: 2%;
     background-color: #282828;
@@ -290,6 +291,14 @@ article {
     text-align: justify;
 }
 
+article > p, article > a {
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+}
+
 .content {
     z-index: 10;
     /* transform: translateY(-20em); */
@@ -301,29 +310,33 @@ article {
     top: 0.7em;
     font-family: "Helvetica";
     text-transform: capitalize;
-    font-size: 7vw;
+    font-size: 8vw;
     flex-grow: 1;
     flex-shrink: 1;
     width: 10%;
     height: 10%;
     font-weight: bold;
-    margin-left: 0.8em;
+    margin-left: 0.6em;
     z-index: 15;
     color: #eff1f5;
 }
 
 #page0 > img {
-    width: 20%;
+    width: 30vw;
     border-radius: 100%;
-    
 }
 
 #page0 > img + p {
     float: right;
     clear: right;
-    flex-basis: 70%;
+    flex-basis: 60%;
     margin-left: 2em;
     text-align: justify;
+    font-size: 2vw;
+}
+
+#page0 > p {
+    font-size: 1.7vw;
 }
 
 #page1 > figure {
@@ -382,8 +395,24 @@ iframe {
     border-color: #0a58ca;
 }
 
-#page3 > a {
-    margin: 0.5em;
+#page3 {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#page3 > figure {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    max-width: 5%;
+    margin: 1em;
+}
+
+#page3 > figure > figcaption > a {
+    display: inline-block;
+    margin: 1em;
+    width: 300%;
+    font-size: 2vw;
 }
 
 .enterLeft {
@@ -441,6 +470,14 @@ iframe {
         display: none;
         flex-direction: column;
     }
+
+    #page0 > img + p {
+        font-size: 2.5vw;
+    }
+    
+    #page0 > p {
+        font-size: 2vw;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -452,7 +489,17 @@ iframe {
         font-size: 0.8em;
     }
 
+    #page0 > img + p {
+        font-size: 3vw;
+    }
+    
+    #page0 > p {
+        font-size: 2.7vw;
+    }
+
     #page2 > a > button {
         font-size: 1em;
     }
+
+
 }

@@ -74,6 +74,7 @@ async function setTab(tab) {
             }
         }
         setTimeout(() => {
+            titre.style.display = "none"
             document.querySelector(`#page${window.currentTab}`).style.display = "none"
             titre.innerHTML = `${titles[tab]}`
             if (titles[tab].length > 8) titre.style.top = "0.7em"
@@ -83,6 +84,7 @@ async function setTab(tab) {
             void titre.offsetWidth;
             titre.classList.add("enterLeft")
             document.querySelector(`#page${tab}`).style.display = "flex"
+            titre.style.display = ""
             animate();
             window.currentTab = tab
         }, animSpeed)
@@ -90,7 +92,7 @@ async function setTab(tab) {
     }
     if(document.querySelector('#tabs').style.display) {
         document.querySelector('#tabs').style.display = "";
-        document.querySelector('.button:first-of-type').style.display = "flex";
+        // document.querySelector('.button:first-of-type').style.display = "flex";
     }
 }
 
