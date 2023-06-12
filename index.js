@@ -6,6 +6,11 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function waitFor(condition, action, delay) {
+    if (!condition()) setTimeout(() => {waitFor(condition, action, delay)}, delay)
+    else action()
+}
+
 function main() {
     // document.getElementById("wave").setAttribute("viewBox", `0 0 1440 ${Math.ceil(60*window.innerHeight/100)}`); 
     window.currentTab = 1;
@@ -32,17 +37,22 @@ function main() {
         setTimeout(blink, delay)
     }
     blink()
-    setTab(0)
+    let ls = ""
+    for (let i = 0; i < window.tabs.length; i++) ls += window.tabs[i].innerText + " "
+    write("ls", 30, ls)
+    waitFor(() => {return window.writing == false}, () => {setTab(0)}, 100)
 }
 
-async function write(text, speed) {
+async function write(text, speed=30, result="") {
+    window.blink = false
     window.writing = true
     cmd.children[cmd.children.length - 1].innerHTML = cmd.children[cmd.children.length - 1].innerHTML.slice(0, -1) + text[0] + "_"
     if(text.length - 1) {
-        setTimeout(function(){ write(text.slice(1), speed) }, speed)
+        setTimeout(function(){ write(text.slice(1), speed, result) }, speed)
     } else {
         cmd.children[cmd.children.length - 1].innerHTML = cmd.children[cmd.children.length - 1].innerHTML.slice(0, -1)
         setTimeout(() => {
+            if (result != "") document.getElementById("cmd").innerHTML += `<li>${result}</li>`
             document.getElementById("cmd").innerHTML += "<li>colin.broussey@portfolio ~ $ _</li>"
             document.getElementById("cmd").scrollTop = document.getElementById("cmd").scrollHeight
             // if(document.getElementById("cmd").children.length > 10) document.getElementById("cmd").replaceChildren(...Array.from(document.getElementById("cmd").querySelectorAll("li")).slice(1))
@@ -58,7 +68,6 @@ async function setTab(tab) {
         // let titre = document.querySelector(`#page${window.currentTab} > h1`)
         let titre = document.querySelector("#wavecontainer > h1")
         window.tabs[tab].style.backgroundColor = "rgba(255, 255, 255, 0.4)"
-        window.blink = false
         cmd = document.getElementById("cmd")
         // let contenu = await fetch(`${titles[tab]}.html`)
         titre.classList.remove("enterLeft")
@@ -82,13 +91,16 @@ async function setTab(tab) {
             // let titre = document.querySelector(`#page${tab} > h1`)
             titre.classList.remove("exitLeft")
             void titre.offsetWidth;
+            document.getElementById("wave").classList.add("enterLeft")
+            document.getElementById("wave").style.display = "flex"
             titre.classList.add("enterLeft")
+            // document.querySelector("#page0").classList.add("enterLeft")
             document.querySelector(`#page${tab}`).style.display = "flex"
             titre.style.display = ""
             animate();
             window.currentTab = tab
         }, animSpeed)
-        await write(`cd ${window.tabs[tab].children[0].innerHTML}`, 30)
+        await write(`cd ${window.tabs[tab].children[0].innerHTML}`)
     }
     if(document.querySelector('#tabs').style.display) {
         document.querySelector('#tabs').style.display = "";
@@ -104,6 +116,20 @@ function hamburgerMenu(open) {
     else {
         document.querySelector('#tabs').style.display = "";
         // document.querySelector('.button:first-of-type').style.display = "flex";
+    }
+}
+
+function goToContent() {
+    if (!window.writing) {
+        write('more');
+        waitFor(() => {return window.writing == false}, () => {document.querySelector('#wavecontainer').scrollIntoView()}, 100);
+    }
+}
+
+function reload() {
+    if (!window.writing) {
+        write('exit');
+        waitFor(() => {return window.writing == false}, () => {location.href = ''}, 100)
     }
 }
 

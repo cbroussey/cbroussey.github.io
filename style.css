@@ -103,6 +103,8 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0;
+    font-family: Tahoma;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -235,7 +237,7 @@ body {
     font-family: "hack";
     list-style-type: none;
     font-size: 1.2em;
-    height: 30%;
+    height: 11.2em;
     margin-top: 20px;
     padding-left: 2em;
     scroll-behavior: smooth;
@@ -246,6 +248,7 @@ body {
 
 #cmd > li {
     padding: 2px;
+    margin: 1px;
 }
 
 #cmd::-webkit-scrollbar {
@@ -258,7 +261,7 @@ section {
 
 #wavecontainer {
     position: relative;
-    margin-top: 20em;
+    margin-top: 21em;
     overflow-x: hidden;
     overflow-y: visible;
     z-index: 1;
@@ -267,6 +270,7 @@ section {
 #wave {
     /* position: absolute; */
     /* top: 40%; */
+    display: none;
     position: relative;
     width: 250%;
     overflow: hidden;
@@ -340,6 +344,7 @@ a {
 }
 
 #page1 > figure {
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
     border-radius: 1em;
     text-align: center;
     padding: 1em;
@@ -351,12 +356,13 @@ a {
     width: 25%;
     height: 110%;
     margin: 1em;
-    transition: background-color var(--animSpeed) ease-out/*, transform var(--animSpeed) ease-out*/;
+    transition: background-color var(--animSpeed) ease-out, margin-top var(--animSpeed) ease-out, box-shadow var(--animSpeed) ease-out;
 }
 
 #page1 > figure:hover {
+    box-shadow: -10px 10px 5px rgba(0, 0, 0, 0.3);
     background-color: rgba(127, 127, 127, 0.3);
-    transform: translateY(-1em);
+    margin-top: -1em;
 }
 
 #page1 > figure > img {
@@ -371,15 +377,19 @@ a {
 iframe {
     border-radius: 0.5em;
     width: 95vw;
-    height: 25em;
+    height: 50em;
     margin-top: 1em;
 }
 
 #page2 > a {
-    align-self: center;
+    display: grid;
+    justify-self: center;
+    text-decoration: none;
 }
 
 #page2 > a > button {
+    align-self: center;
+    justify-self: center;
     font-size: 1.5em;
     color: #fff;
     background-color: #0d6efd;
@@ -390,7 +400,7 @@ iframe {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-#page2 > a > .button:hover {
+#page2 > a > button:hover {
     background-color: #0b5ed7;
     border-color: #0a58ca;
 }
@@ -404,9 +414,20 @@ iframe {
     cursor: pointer;
     display: flex;
     align-items: center;
+    /* padding: 0.5em; */
     max-width: 5%;
     margin: 1em;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    transition: margin-left var(--animSpeed) ease-out;
 }
+
+#page3 > figure:hover {
+    margin-left: 1.5em;
+}
+
+/* #page3 > figure > figcaption {
+    background-color: rgba(0, 0, 0, 0.3);
+} */
 
 #page3 > figure > figcaption > a {
     display: inline-block;
