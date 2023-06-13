@@ -62,7 +62,6 @@ table {
          url('polices/hack-bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
-
 }
 
 @font-face {
@@ -71,7 +70,6 @@ table {
          url('polices/hack-bolditalic-webfont.woff') format('woff');
     font-weight: bold;
     font-style: italic;
-
 }
 
 @font-face {
@@ -80,7 +78,6 @@ table {
          url('polices/hack-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: italic;
-
 }
 
 @font-face {
@@ -89,7 +86,6 @@ table {
          url('polices/hack-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -98,7 +94,6 @@ table {
          url('polices/helvetica-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -107,7 +102,6 @@ table {
          url('polices/helvetica-bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
-
 }
 
 @font-face {
@@ -116,7 +110,6 @@ table {
          url('polices/helvetica-boldoblique-webfont.woff') format('woff');
     font-weight: bold;
     font-style: italic;
-
 }
 
 @font-face {
@@ -125,7 +118,6 @@ table {
          url('polices/helvetica-oblique-webfont.woff') format('woff');
     font-weight: normal;
     font-style: italic;
-
 }
 
 @font-face {
@@ -134,7 +126,6 @@ table {
          url('polices/helvetica-rounded-bold-5871d05ead8de-webfont.woff') format('woff');
     font-weight: bolder;
     font-style: normal;
-
 }
 
 @font-face {
@@ -143,8 +134,27 @@ table {
          url('polices/helvetica-compressed-5871d14b6903a-webfont.woff') format('woff');
     font-weight: thin;
     font-style: normal;
-
 }
+
+@font-face {
+    font-family: 'tahoma';
+    src: url('polices/tahoma_regular_font-webfont.woff2') format('woff2'),
+         url('polices/tahoma_regular_font-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tahoma';
+    src: url('polices/tahomabd-webfont.woff2') format('woff2'),
+         url('polices/tahomabd-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+
 
 
 :root {
