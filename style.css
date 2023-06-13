@@ -92,6 +92,60 @@ table {
 
 }
 
+@font-face {
+    font-family: 'Helvetica';
+    src: url('polices/helvetica-webfont.woff2') format('woff2'),
+         url('polices/helvetica-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('polices/helvetica-bold-webfont.woff2') format('woff2'),
+         url('polices/helvetica-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('polices/helvetica-boldoblique-webfont.woff2') format('woff2'),
+         url('polices/helvetica-boldoblique-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('polices/helvetica-oblique-webfont.woff2') format('woff2'),
+         url('polices/helvetica-oblique-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('polices/helvetica-rounded-bold-5871d05ead8de-webfont.woff2') format('woff2'),
+         url('polices/helvetica-rounded-bold-5871d05ead8de-webfont.woff') format('woff');
+    font-weight: bolder;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('polices/helvetica-compressed-5871d14b6903a-webfont.woff2') format('woff2'),
+         url('polices/helvetica-compressed-5871d14b6903a-webfont.woff') format('woff');
+    font-weight: thin;
+    font-style: normal;
+
+}
+
 
 :root {
     --animSpeed: 0.5s;
