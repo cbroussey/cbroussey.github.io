@@ -152,9 +152,53 @@ table {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'futura';
+    src: url('polices/futura_light_font-webfont.woff2') format('woff2'),
+         url('polices/futura_light_font-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'futura';
+    src: url('polices/futura_light_italic_font-webfont.woff2') format('woff2'),
+         url('polices/futura_light_italic_font-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: italic;
+}
 
+@font-face {
+    font-family: 'futura';
+    src: url('polices/futura_medium_bt_font-webfont.woff2') format('woff2'),
+         url('polices/futura_medium_bt_font-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'futura';
+    src: url('polices/futura_medium_italic_font-webfont.woff2') format('woff2'),
+         url('polices/futura_medium_italic_font-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'futura';
+    src: url('polices/futura_bold_font-webfont.woff2') format('woff2'),
+         url('polices/futura_bold_font-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura';
+    src: url('polices/futura_bold_italic_font-webfont.woff2') format('woff2'),
+         url('polices/futura_bold_italic_font-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
 
 
 :root {
@@ -354,7 +398,7 @@ article {
     padding: 1em;
     color: white;
     font-family: "futura";
-    font-weight: 400;
+    font-weight: normal;
     font-size: 1.5vw;
     text-align: justify;
 }
