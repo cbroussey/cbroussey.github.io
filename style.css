@@ -154,6 +154,14 @@ table {
 
 @font-face {
     font-family: 'futura';
+    src: url('polices/futura_medium_bt_font-webfont.woff2') format('woff2'),
+         url('polices/futura_medium_bt_font-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura';
     src: url('polices/futura_light_font-webfont.woff2') format('woff2'),
          url('polices/futura_light_font-webfont.woff') format('woff');
     font-weight: lighter;
@@ -166,14 +174,6 @@ table {
          url('polices/futura_light_italic_font-webfont.woff') format('woff');
     font-weight: lighter;
     font-style: italic;
-}
-
-@font-face {
-    font-family: 'futura';
-    src: url('polices/futura_medium_bt_font-webfont.woff2') format('woff2'),
-         url('polices/futura_medium_bt_font-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
