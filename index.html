@@ -3,136 +3,138 @@
 <!-- À faire : dark/light mode, adaptation de la taille de police, régler les bugs, finir le contenu -->
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
-<head>
-	<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Site portfolio de Colin Broussey">
-	<meta name="keywords" content="portfolio colin broussey site projets dev informatique">
-	<title>Colin Broussey</title>
-	<link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/Profil.jpg">
-    <script src="index.js"></script>
-</head>
-<body onload="main()">
-    <div id="console">
-        <nav id="navigation">
-            <li class="button" onclick="hamburgerMenu()"><img src="images/hamburger.svg"></li>
-            <div id="tabs">
-                <li class="tab"><a href="#">Accueil</a></li>
-                <li class="tab"><a href="#">Projets</a></li>
-                <li class="tab"><a href="#">CV</a></li>
-                <li class="tab"><a href="#">Contact</a></li>
+    <head>
+    	<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Site portfolio de Colin Broussey">
+    	<meta name="keywords" content="portfolio colin broussey site projets dev informatique">
+    	<title>Colin Broussey</title>
+    	<link rel="stylesheet" href="style.css">
+        <link rel="icon" href="images/Profil.jpg">
+        <script src="index.js"></script>
+    </head>
+    <body onload="main()">
+        <div id="wrapper">
+            <div id="console">
+                <nav id="navigation">
+                    <li class="button" onclick="hamburgerMenu()"><img src="images/hamburger.svg"></li>
+                    <div id="tabs">
+                        <li class="tab"><a href="#">Accueil</a></li>
+                        <li class="tab"><a href="#">Projets</a></li>
+                        <li class="tab"><a href="#">CV</a></li>
+                        <li class="tab"><a href="#">Contact</a></li>
+                    </div>
+                    <li class="button" onclick="goToContent()"><img src="images/minimize.svg"></li>
+                    <li class="button" onclick="reload()"><img src="images/close.svg"></li>
+                </nav>
+                <!-- <div id="hamburger"> -->
+                    <!-- <li class="tab"><a href="#">Accueil</a></li> -->
+                    <!-- <li class="tab"><a href="#">Projets</a></li> -->
+                    <!-- <li class="tab"><a href="#">CV</a></li> -->
+                    <!-- <li class="tab"><a href="#">Contact</a></li> -->
+                <!-- </div> -->
+                <ul id="cmd">
+                    <li>colin.broussey@portfolio ~ $ _</li>
+                </ul>
             </div>
-            <li class="button" onclick="goToContent()"><img src="images/minimize.svg"></li>
-            <li class="button" onclick="reload()"><img src="images/close.svg"></li>
-        </nav>
-        <!-- <div id="hamburger"> -->
-            <!-- <li class="tab"><a href="#">Accueil</a></li> -->
-            <!-- <li class="tab"><a href="#">Projets</a></li> -->
-            <!-- <li class="tab"><a href="#">CV</a></li> -->
-            <!-- <li class="tab"><a href="#">Contact</a></li> -->
-        <!-- </div> -->
-        <ul id="cmd">
-            <li>colin.broussey@portfolio ~ $ _</li>
-        </ul>
-    </div>
-    <section>
-        <div id="wavecontainer">
-            <img id="wave" src="images/wave3.svg">
-            <h1></h1>
+            <section>
+                <div id="wavecontainer">
+                    <img id="wave" src="images/wave3.svg">
+                    <h1></h1>
+                </div>
+                <article id="page0" class="content" style="display: none;">
+                    <!-- <h1>Colin Broussey</h1> -->
+                    <img src="images/Profil.jpg">
+                    <p>Je suis un développeur informatique avec 4 ans d'expérience personnelle, toujours à la recherche de technologies innovantes dans l'objectif d'acquérir de nouvelles connaissances et d'en concevoir d'autres.<br><br>Je suis actuellement en recherche de stage en développement d'applications informatiques</p>
+                    <p>ㅤ</p>
+                    <p>Je possède un Brevet mention très bien et un Bac général avec options Mathématiques (dont expertes) et Numérique et Sciences de l'Informatique, et j'étudie actuellement à l'IUT de Lannion en Informatique.</p>
+                    <p>ㅤ</p>   
+                    <p>Je souhaite continuer jusqu'au Bac+5 afin de pouvoir m'ouvrir également à la cybersécurité</p>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                    <!-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
+                    <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> -->
+                    <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+                </article>
+                <article id="page1" class="content" style="display: none;">
+                    <!-- <h1>Projets</h1> -->
+                    <figure onclick="window.open('https://github.com/cbroussey/puissance4')">
+                        <p>Réaliser un développement d'application</p>
+                        <img src="images/puissance4.gif">
+                        <figcaption>Puissance 4 et IA</figcaption>
+                    </figure>
+                    <figure onclick="window.open('https://github.com/cbroussey/PBcavalier')">
+                        <p>Optimiser les applications informatiques</p>
+                        <img src="images/cavalier.gif">
+                        <figcaption>Problème du cavalier</figcaption>
+                    </figure>
+                    <!-- <figure onclick="alert('Oups... Ce projet n\'est pas terminé') /*window.open('https://github.com/cbroussey/apache')*/">
+                        <p>Administrer des systèmes informatiques communiquants</p>
+                        <img src="images/apache.gif">
+                        <figcaption>Gestion d'un serveur Apache</figcaption>
+                    </figure> -->
+                    <figure onclick="window.open('https://github.com/cbroussey/autoPDF')">
+                        <p>Administrer des systèmes informatiques communiquants</p>
+                        <img src="images/pdf.gif">
+                        <figcaption>Automatisation de PDF</figcaption>
+                    </figure>
+                    <!-- <figure onclick="window.open('https://github.com/cbroussey/autoPDF')">
+                        <p>Optimiser les applications informatiques</p>
+                        <img src="images/pdf.gif">
+                        <figcaption>Automatisation de PDF</figcaption>
+                    </figure> -->
+                    <figure onclick="window.open('https://github.com/cbroussey/BDDtransmusicales')">
+                        <p>Gérer des données de l'information</p>
+                        <img src="images/bdd.gif">
+                        <figcaption>Création de Base De Données</figcaption>
+                    </figure>
+                    <figure onclick="window.open('https://www.canva.com/design/DAFjB2KBE94/5IBXiWJiIMZzOL1VxoqtRQ/view')">
+                        <p>Conduire un projet</p><p>ㅤ</p>
+                        <img src="images/team.gif">
+                        <figcaption>Organisation d'une équipe</figcaption>
+                    </figure>
+                    <figure onclick="window.open('https://github.com/cbroussey/sportkoh')">
+                        <p>Travailler dans une équipe</p><p>ㅤ</p>
+                        <img src="images/web.gif"> <!-- python maths cavalier, apache (pas encore), team building-->
+                        <figcaption>Réalisation d'un site web</figcaption>
+                    </figure>
+                    <p style='width: 100%; text-align: center;'>Et ce site qui a été entièrement codé par moi :)</p>
+                </article>
+                <article id="page2" class="content" style="display: none;">
+                    <!-- <h1>CV</h1> -->
+                    <a href="CV Colin Broussey.pdf" download="CV Colin Broussey.pdf"><button >Télécharger</button></a>
+                    <iframe src="CV Colin Broussey.pdf"></iframe>
+                </article>
+                <article id="page3" class="content" style="display: none;">
+                    <!-- <h1>Contact</h1> -->
+                    <figure onclick="window.location.href = 'mailto:colin.broussey@proton.me'">
+                        <img src="images/email.svg">
+                        <figcaption>
+                            <a>colin.broussey@proton.me</a>
+                        </figcaption>
+                    </figure>
+                    <!-- <p>ㅤ</p> -->
+                    <figure onclick="window.location.href = 'tel:0625155904'">
+                        <img src="images/telephone.svg">
+                        <figcaption>
+                            <a>06 25 15 59 04</a>
+                        </figcaption>
+                    </figure>
+                    <!-- <p>ㅤ</p> -->
+                    <figure onclick="window.open('https://www.linkedin.com/in/colin-broussey/')">
+                        <img src="images/linkedin.svg">
+                        <figcaption>
+                            <a>Colin Broussey</a>
+                        </figcaption>
+                    </figure>
+                    <!-- <p>ㅤ</p> -->
+                    <figure onclick="window.open('https://github.com/cbroussey')">
+                        <img src="images/github.svg">
+                        <figcaption>
+                            <a>cbroussey</a>
+                        </figcaption>
+                    </figure>
+                </article>
+            </section>
         </div>
-        <article id="page0" class="content" style="display: none;">
-            <!-- <h1>Colin Broussey</h1> -->
-            <img src="images/Profil.jpg">
-            <p>Je suis un développeur informatique avec 4 ans d'expérience personnelle, toujours à la recherche de technologies innovantes dans l'objectif d'acquérir de nouvelles connaissances et d'en concevoir d'autres.<br><br>Je suis actuellement en recherche de stage en développement d'applications informatiques</p>
-            <p>ㅤ</p>
-            <p>Je possède un Brevet mention très bien et un Bac général avec options Mathématiques (dont expertes) et Numérique et Sciences de l'Informatique, et j'étudie actuellement à l'IUT de Lannion en Informatique.</p>
-            <p>ㅤ</p>   
-            <p>Je souhaite continuer jusqu'au Bac+5 afin de pouvoir m'ouvrir également à la cybersécurité</p>
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
-            <!-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
-            <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> -->
-            <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-        </article>
-        <article id="page1" class="content" style="display: none;">
-            <!-- <h1>Projets</h1> -->
-            <figure onclick="window.open('https://github.com/cbroussey/puissance4')">
-                <p>Réaliser un développement d'application</p>
-                <img src="images/puissance4.gif">
-                <figcaption>Puissance 4 et IA</figcaption>
-            </figure>
-            <figure onclick="window.open('https://github.com/cbroussey/PBcavalier')">
-                <p>Optimiser les applications informatiques</p>
-                <img src="images/cavalier.gif">
-                <figcaption>Problème du cavalier</figcaption>
-            </figure>
-            <!-- <figure onclick="alert('Oups... Ce projet n\'est pas terminé') /*window.open('https://github.com/cbroussey/apache')*/">
-                <p>Administrer des systèmes informatiques communiquants</p>
-                <img src="images/apache.gif">
-                <figcaption>Gestion d'un serveur Apache</figcaption>
-            </figure> -->
-            <figure onclick="window.open('https://github.com/cbroussey/autoPDF')">
-                <p>Administrer des systèmes informatiques communiquants</p>
-                <img src="images/pdf.gif">
-                <figcaption>Automatisation de PDF</figcaption>
-            </figure>
-            <!-- <figure onclick="window.open('https://github.com/cbroussey/autoPDF')">
-                <p>Optimiser les applications informatiques</p>
-                <img src="images/pdf.gif">
-                <figcaption>Automatisation de PDF</figcaption>
-            </figure> -->
-            <figure onclick="window.open('https://github.com/cbroussey/BDDtransmusicales')">
-                <p>Gérer des données de l'information</p>
-                <img src="images/bdd.gif">
-                <figcaption>Création de Base De Données</figcaption>
-            </figure>
-            <figure onclick="window.open('https://www.canva.com/design/DAFjB2KBE94/5IBXiWJiIMZzOL1VxoqtRQ/view')">
-                <p>Conduire un projet</p><p>ㅤ</p>
-                <img src="images/team.gif">
-                <figcaption>Organisation d'une équipe</figcaption>
-            </figure>
-            <figure onclick="window.open('https://github.com/cbroussey/sportkoh')">
-                <p>Travailler dans une équipe</p><p>ㅤ</p>
-                <img src="images/web.gif"> <!-- python maths cavalier, apache (pas encore), team building-->
-                <figcaption>Réalisation d'un site web</figcaption>
-            </figure>
-            <p style='width: 100%; text-align: center;'>Et ce site qui a été entièrement codé par moi :)</p>
-        </article>
-        <article id="page2" class="content" style="display: none;">
-            <!-- <h1>CV</h1> -->
-            <a href="CV Colin Broussey.pdf" download="CV Colin Broussey.pdf"><button >Télécharger</button></a>
-            <iframe src="CV Colin Broussey.pdf"></iframe>
-        </article>
-        <article id="page3" class="content" style="display: none;">
-            <!-- <h1>Contact</h1> -->
-            <figure onclick="window.location.href = 'mailto:colin.broussey@proton.me'">
-                <img src="images/email.svg">
-                <figcaption>
-                    <a>colin.broussey@proton.me</a>
-                </figcaption>
-            </figure>
-            <!-- <p>ㅤ</p> -->
-            <figure onclick="window.location.href = 'tel:0625155904'">
-                <img src="images/telephone.svg">
-                <figcaption>
-                    <a>06 25 15 59 04</a>
-                </figcaption>
-            </figure>
-            <!-- <p>ㅤ</p> -->
-            <figure onclick="window.open('https://www.linkedin.com/in/colin-broussey/')">
-                <img src="images/linkedin.svg">
-                <figcaption>
-                    <a>Colin Broussey</a>
-                </figcaption>
-            </figure>
-            <!-- <p>ㅤ</p> -->
-            <figure onclick="window.open('https://github.com/cbroussey')">
-                <img src="images/github.svg">
-                <figcaption>
-                    <a>cbroussey</a>
-                </figcaption>
-            </figure>
-        </article>
-    </section>
-</body>
+    </body>
 </html>

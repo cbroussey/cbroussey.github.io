@@ -159,7 +159,7 @@ table {
     font-weight: normal;
     font-style: normal;
 }
-
+/*
 @font-face {
     font-family: 'futura';
     src: url('polices/futura_light_font-webfont.woff2') format('woff2'),
@@ -175,7 +175,7 @@ table {
     font-weight: lighter;
     font-style: italic;
 }
-
+*/
 @font-face {
     font-family: 'futura';
     src: url('polices/futura_medium_italic_font-webfont.woff2') format('woff2'),
@@ -183,7 +183,7 @@ table {
     font-weight: normal;
     font-style: italic;
 }
-
+/*
 @font-face {
     font-family: 'futura';
     src: url('polices/futura_bold_font-webfont.woff2') format('woff2'),
@@ -199,10 +199,10 @@ table {
     font-weight: bold;
     font-style: italic;
 }
-
+*/
 
 :root {
-    --animSpeed: 0.5s;
+    --animSpeed: 0.4s;
 }
 
 
@@ -225,6 +225,13 @@ body {
     );
 }
 
+#wrapper {
+    width: 100%;
+    height: 100%;
+    perspective: 1px;
+    overflow-y: auto;
+}
+
 #console {
     position: absolute;
     width: 94%;
@@ -236,6 +243,8 @@ body {
     color: #eff1f5;
     border-radius: 30px;
     box-shadow: -10px -10px 5px #191919;
+    transform: translateZ(-1px) scale(2);
+    transform-style: preserve-3d;
 }
 
 #navigation {
@@ -365,6 +374,12 @@ body {
 
 section {
     overflow-x: hidden;
+    -ms-overflow-style: none; /* Internet Explorer, Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 #wavecontainer {
@@ -373,6 +388,7 @@ section {
     overflow-x: hidden;
     overflow-y: visible;
     z-index: 1;
+    transform: translateZ(0);
 }
 
 #wave {
@@ -464,7 +480,7 @@ a {
     width: 25%;
     height: 110%;
     margin: 1em;
-    transition: background-color var(--animSpeed) ease-out, margin-top var(--animSpeed) ease-out, box-shadow var(--animSpeed) ease-out;
+    transition: background-color calc(var(--animSpeed) / 2) ease-out, margin-top calc(var(--animSpeed) / 2) ease-out, box-shadow calc(var(--animSpeed) / 2) ease-out;
 }
 
 #page1 > figure:hover {
@@ -629,6 +645,5 @@ iframe {
     #page2 > a > button {
         font-size: 1em;
     }
-
 
 }
