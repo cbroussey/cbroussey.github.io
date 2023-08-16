@@ -230,6 +230,7 @@ body {
     height: 100%;
     perspective: 1px;
     overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 #console {
