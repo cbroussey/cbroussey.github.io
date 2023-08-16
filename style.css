@@ -154,8 +154,8 @@ table {
 
 @font-face {
     font-family: 'futura';
-    src: url('polices/futura_medium_bt_font-webfont.woff2') format('woff2'),
-         url('polices/futura_medium_bt_font-webfont.woff') format('woff');
+    src: url('polices/futura_medium_bt-webfont.woff2') format('woff2'),
+         url('polices/futura_medium_bt-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -238,7 +238,7 @@ body {
     height: 115vw;
     max-height: 800px;
     left: 3%;
-    top: 2%;
+    top: 10%;
     background-color: #282828;
     color: #eff1f5;
     border-radius: 30px;
