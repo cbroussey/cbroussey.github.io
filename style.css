@@ -233,13 +233,40 @@ body {
     scroll-behavior: smooth;
 }
 
+#up {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    bottom: 2em;
+    right: 3em;
+    width: 4em;
+    height: 4em;
+    border-radius: .5em;
+    background-color: #424242;
+    transition: background-color var(--animSpeed) ease 0ms;
+    cursor: pointer;
+    z-index: 99;
+}
+
+#up:hover {
+    background-color: #535353;
+}
+
+#up > img {
+    width: 100%;
+    height: 100%;
+    filter: invert(97%) sepia(8%) saturate(134%) hue-rotate(186deg) brightness(99%) contrast(93%);
+    transform: rotate(180deg) translateY(-5px);
+}
+
 #console {
     position: absolute;
     width: 94%;
     height: 115vw;
     max-height: 800px;
     left: 3%;
-    top: 10%;
+    top: 4em;
     background-color: #282828;
     color: #eff1f5;
     border-radius: 30px;
@@ -561,6 +588,10 @@ iframe {
     font-size: 2vw;
 }
 
+.enter {
+    animation: slide-in var(--animSpeed) ease-in normal;
+}
+
 .enterLeft {
     animation: rightSlide var(--animSpeed) ease-in reverse;
 }
@@ -575,6 +606,10 @@ iframe {
 
 .exitRight {
     animation: leftSlide var(--animSpeed) ease-in normal;
+}
+
+.exit {
+    animation: slide-in var(--animSpeed) ease-in reverse;
 }
 
 @keyframes slide-in {
