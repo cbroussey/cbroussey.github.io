@@ -1,6 +1,6 @@
 const titles = ["Colin Broussey", "Projets", "CV", "Contact"]
 
-const animSpeed = 510;
+const animSpeed = 380;
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -73,12 +73,19 @@ async function setTab(tab) {
         titre.classList.remove("enterLeft")
         void titre.offsetWidth;
         titre.classList.add("exitLeft")
-        let lines = document.querySelectorAll(`#page${tab} > *:not(h1)`)
+        var lines = document.querySelectorAll(`#page${window.currentTab} > *:not(h1)`)
+        for (let i = 0; i < lines.length; i++) {
+            lines[i].classList.remove("enter")
+            void lines[i].offsetHeight;
+            lines[i].classList.add("exit")
+        }
         async function animate(i = 0) {
             if (i < lines.length) {
                 // console.log(lines[i])
                 // document.querySelectorAll("body > *")[i].style.animation = "slide-in .8s ease-in-out both"
-                lines[i].style.animation = "slide-in .8s ease-in-out both"
+                //lines[i].style.animation = "slide-in .8s ease-in-out both"
+                lines[i].classList.add("enter")
+                lines[i].style.opacity = ""
                 setTimeout(function(){ animate(i + 1) }, 50)
             }
         }
@@ -94,10 +101,15 @@ async function setTab(tab) {
             document.getElementById("wave").classList.add("enterLeft")
             document.getElementById("wave").style.display = "flex"
             titre.classList.add("enterLeft")
-            // document.querySelector("#page0").classList.add("enterLeft")
-            document.querySelector(`#page${tab}`).style.display = "flex"
             titre.style.display = ""
+            // document.querySelector("#page0").classList.add("enterLeft")
+            for (let i = 0; i < lines.length; i++) {
+                lines[i].style.opacity = "0"
+                lines[i].classList.remove("exit")
+            }
+            lines = document.querySelectorAll(`#page${tab} > *:not(h1)`)
             animate();
+            document.querySelector(`#page${tab}`).style.display = "flex"
             window.currentTab = tab
         }, animSpeed)
         await write(`cd ${window.tabs[tab].children[0].innerHTML}`)
@@ -137,4 +149,14 @@ function adapt() {
     document.getElementById("cmd").scrollTop = document.getElementById("cmd").scrollHeight
 }
 
+function scrolled() {
+    console.log("scroll")
+    if (document.querySelector("#wrapper").scrollTop > 30) {
+        document.querySelector("#up").style.display = "flex"
+    } else {
+        document.querySelector("#up").style.display = "none"
+    }
+}
+
 window.addEventListener("resize", adapt);
+document.getElementById("wrapper").addEventListener("scroll", scrolled);
