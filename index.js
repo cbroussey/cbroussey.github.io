@@ -150,7 +150,7 @@ function adapt() {
 }
 
 function scrolled() {
-    console.log("scroll")
+    //console.log("scroll")
     if (document.querySelector("#wrapper").scrollTop > 30) {
         document.querySelector("#up").style.display = "flex"
     } else {
@@ -159,4 +159,7 @@ function scrolled() {
 }
 
 window.addEventListener("resize", adapt);
-document.getElementById("wrapper").addEventListener("scroll", scrolled);
+
+document.addEventListener("DOMContentLoaded", e => {
+    //document.getElementById("wrapper").addEventListener("scroll", scrolled);
+})
