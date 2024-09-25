@@ -67,7 +67,7 @@ async function setTab(tab) {
         window.tabs[window.currentTab].style.backgroundColor = ""
         // let titre = document.querySelector(`#page${window.currentTab} > h1`)
         let titre = document.querySelector("#wavecontainer > h1")
-        window.tabs[tab].style.backgroundColor = "rgba(255, 255, 255, 0.4)"
+        window.tabs[tab].style.backgroundColor = "var(--tabActiveCol)"
         cmd = document.getElementById("cmd")
         // let contenu = await fetch(`${titles[tab]}.html`)
         titre.classList.remove("enterLeft")
@@ -98,6 +98,7 @@ async function setTab(tab) {
             // let titre = document.querySelector(`#page${tab} > h1`)
             titre.classList.remove("exitLeft")
             void titre.offsetWidth;
+            document.getElementById("wavecontainer").style.marginTop = `${document.getElementById("cmd").getBoundingClientRect().bottom}px`
             document.getElementById("wave").classList.add("enterLeft")
             document.getElementById("wave").style.display = "flex"
             titre.classList.add("enterLeft")
@@ -110,6 +111,7 @@ async function setTab(tab) {
             lines = document.querySelectorAll(`#page${tab} > *:not(h1)`)
             animate();
             document.querySelector(`#page${tab}`).style.display = "flex"
+            document.getElementById("bottomFill").style.display = ""
             window.currentTab = tab
         }, animSpeed)
         await write(`cd ${window.tabs[tab].children[0].innerHTML}`)

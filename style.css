@@ -203,6 +203,10 @@ table {
 
 :root {
     --animSpeed: 0.4s;
+    --tabPassiveCol: #424242;
+    --tabHoverCol: #535353;
+    --tabActiveCol: #7e7e7e;
+    --waveMainCol: #63b9e6;
 }
 
 
@@ -307,7 +311,7 @@ body {
     max-height: 2em;
     text-align: center;
     border-radius: 10px;
-    background-color: rgba(127, 127, 127, 0.3);
+    background-color: var(--tabPassiveCol);
     transition: background-color var(--animSpeed) ease 0ms;
     cursor: pointer;
 }
@@ -322,7 +326,6 @@ body {
 }
 
 .button {
-
     display: flex;
     position: relative;
     /* align-self: flex-end; */
@@ -341,7 +344,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    background-color: rgba(127, 127, 127, 0.3);
+    background-color: var(--tabPassiveCol);
     transition: background-color var(--animSpeed) ease 0ms;
     cursor: pointer;
 }
@@ -363,7 +366,7 @@ body {
 }
 
 .tab:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--tabHoverCol);
 }
 
 .button:first-of-type:hover {
@@ -588,6 +591,13 @@ object {
     font-size: 2vw;
 }
 
+#bottomFill {
+    flex: 1 0 auto;
+    z-index: 2;
+    flex-basis: 100%;
+    background-color: var(--waveMainCol);
+}
+
 .enter {
     animation: slide-in var(--animSpeed) ease-in normal;
 }
@@ -650,6 +660,8 @@ object {
     #tabs {
         display: none;
         flex-direction: column;
+        position: absolute;
+        left: 4.5em
     }
 
     #page0 > img + p {
