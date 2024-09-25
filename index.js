@@ -64,6 +64,7 @@ async function write(text, speed=30, result="") {
 
 async function setTab(tab) {
     if(tab != window.currentTab && !window.writing) {
+        scrollToTop()
         window.tabs[window.currentTab].style.backgroundColor = ""
         // let titre = document.querySelector(`#page${window.currentTab} > h1`)
         let titre = document.querySelector("#wavecontainer > h1")
@@ -110,7 +111,13 @@ async function setTab(tab) {
             }
             lines = document.querySelectorAll(`#page${tab} > *:not(h1)`)
             animate();
-            document.querySelector(`#page${tab}`).style.display = "flex"
+            let newpage = document.querySelector(`#page${tab}`)
+            newpage.style.display = "flex"
+            // pb : le code commenté en dessous marche mais le flex ne se met qu'à 100% donc certaines parties peuvent être coupées et mises en scroll en fonction de la largeur
+            let isPageOverflowing = newpage.getBoundingClientRect().bottom > window.innerHeight /* document.getElementById("console").getBoundingClientRect().bottom */ // not perfect
+            console.log(isPageOverflowing)
+            newpage.style.flexBasis = isPageOverflowing ? "auto" : "0"
+            document.querySelector("#wrapper > section").style.height = isPageOverflowing ? "" : "100%"
             document.getElementById("bottomFill").style.display = ""
             window.currentTab = tab
         }, animSpeed)
@@ -158,6 +165,10 @@ function scrolled() {
     } else {
         document.querySelector("#up").style.display = "none"
     }
+}
+
+function scrollToTop() {
+    document.querySelector('#wrapper').scrollTo(0, 0)
 }
 
 window.addEventListener("resize", adapt);

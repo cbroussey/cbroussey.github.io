@@ -398,6 +398,9 @@ body {
 }
 
 section {
+    display: flex;
+    flex-direction: column;
+
     overflow-x: hidden;
     -ms-overflow-style: none; /* Internet Explorer, Edge */
     scrollbar-width: none; /* Firefox */
@@ -408,6 +411,7 @@ section::-webkit-scrollbar {
 }
 
 #wavecontainer {
+    flex: 0 0 auto;
     position: relative;
     margin-top: 21em;
     overflow-x: hidden;
@@ -432,6 +436,8 @@ article {
     justify-content: center;
     /* flex-direction: column; */
     flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 1;
     position: relative;
     margin-top: -0.4vh;
     width: calc(100% - 2em);
@@ -588,7 +594,6 @@ object {
 #bottomFill {
     flex: 1 0 auto;
     z-index: 2;
-    flex-basis: 100%;
     background-color: var(--waveMainCol);
 }
 
@@ -653,6 +658,7 @@ object {
 
     #tabs {
         display: none;
+        width: 35vw;
         flex-direction: column;
         position: absolute;
         left: 4.5em
