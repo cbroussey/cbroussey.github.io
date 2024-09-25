@@ -297,11 +297,19 @@ body {
     flex-grow: 1;
 }
 
-.tab {
+.tab, .button {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--tabPassiveCol);
+    transition: background-color var(--animSpeed) ease 0ms;
+    cursor: pointer;
+}
+
+.tab {
     padding: 0.5em 2em;
     margin-right: 1em;
     /* min-width: 2em; */
@@ -309,11 +317,6 @@ body {
     flex-basis: 220px;
     flex-grow: 1;
     max-height: 2em;
-    text-align: center;
-    border-radius: 10px;
-    background-color: var(--tabPassiveCol);
-    transition: background-color var(--animSpeed) ease 0ms;
-    cursor: pointer;
 }
 
 .tab > a {
@@ -326,7 +329,6 @@ body {
 }
 
 .button {
-    display: flex;
     position: relative;
     /* align-self: flex-end; */
     /* justify-self: flex-end; */
@@ -334,19 +336,11 @@ body {
     flex-grow: 0;
     height: 100%;
     
-    flex-direction: row;
     flex-basis: 45.6px;
     flex-grow: 0;
     flex-shrink: 0;
-    text-align: center;
     margin-left: auto;
     width: auto;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: var(--tabPassiveCol);
-    transition: background-color var(--animSpeed) ease 0ms;
-    cursor: pointer;
 }
 
 .button:first-of-type {
