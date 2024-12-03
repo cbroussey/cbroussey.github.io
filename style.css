@@ -247,14 +247,14 @@ body {
     width: 4em;
     height: 4em;
     border-radius: .5em;
-    background-color: #424242;
+    background-color: var(--tabPassiveCol);
     transition: background-color var(--animSpeed) ease 0ms;
     cursor: pointer;
     z-index: 99;
 }
 
 #up:hover {
-    background-color: #535353;
+    background-color: var(--tabHoverCol);
 }
 
 #up > img {
@@ -461,7 +461,7 @@ a {
 .content {
     z-index: 10;
     /* transform: translateY(-20em); */
-    background-color: #63b9e6;
+    background-color: var(--waveMainCol);
 }
 
 .content > h1, #wavecontainer > h1 {

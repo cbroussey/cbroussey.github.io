@@ -1,4 +1,13 @@
 const titles = ["Colin Broussey", "Projets", "CV", "Contact"]
+const mots = {
+    "damien": () => {
+        var shift = document.createElement("style")
+        document.head.appendChild(shift)
+        shift.sheet.insertRule("section > * { filter: hue-rotate(180deg); }")
+        shift.sheet.insertRule("article > * { filter: hue-rotate(180deg); }")
+     },
+    "ananas": () => alert("🍍")
+}
 
 const animSpeed = 380;
 
@@ -41,6 +50,20 @@ function main() {
     for (let i = 0; i < window.tabs.length; i++) ls += window.tabs[i].innerText + " "
     write("ls", 30, ls)
     waitFor(() => {return window.writing == false}, () => {setTab(0)}, 100)
+
+    window.lastText= ""
+    document.onkeydown = function KeyPress(e) {
+        window.lastText += e.key.toLowerCase()
+        if (!Object.keys(mots).map(e => e.substring(0, window.lastText.length)).includes(window.lastText)) {
+            window.lastText = e.key.toLowerCase()
+        }
+        if (Object.keys(mots).includes(window.lastText)) {
+            mots[window.lastText]()
+            window.lastText = ""
+        }
+        //e.preventDefault()
+    }
+
 }
 
 async function write(text, speed=30, result="") {
