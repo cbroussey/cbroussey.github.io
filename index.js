@@ -1,11 +1,6 @@
 const titles = ["Colin Broussey", "Projets", "CV", "Contact"]
 const mots = {
-    "damien": () => {
-        var shift = document.createElement("style")
-        document.head.appendChild(shift)
-        shift.sheet.insertRule("section > * { filter: hue-rotate(180deg); }")
-        shift.sheet.insertRule("article > * { filter: hue-rotate(180deg); }")
-     },
+    "damien": () => document.querySelector(":root").style.setProperty("--hueRotation", "180deg"),
     "ananas": () => alert("🍍")
 }
 
