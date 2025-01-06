@@ -1,4 +1,8 @@
 const titles = ["Colin Broussey", "Projets", "CV", "Contact"]
+const mots = {
+    "damien": () => document.querySelector(":root").style.setProperty("--hueRotation", "180deg"),
+    "ananas": () => alert("🍍")
+}
 
 const animSpeed = 380;
 
@@ -41,11 +45,26 @@ function main() {
     for (let i = 0; i < window.tabs.length; i++) ls += window.tabs[i].innerText + " "
     write("ls", 30, ls)
     waitFor(() => {return window.writing == false}, () => {setTab(0)}, 100)
+
+    window.lastText= ""
+    document.onkeydown = function KeyPress(e) {
+        window.lastText += e.key.toLowerCase()
+        if (!Object.keys(mots).map(e => e.substring(0, window.lastText.length)).includes(window.lastText)) {
+            window.lastText = e.key.toLowerCase()
+        }
+        if (Object.keys(mots).includes(window.lastText)) {
+            mots[window.lastText]()
+            window.lastText = ""
+        }
+        //e.preventDefault()
+    }
+
 }
 
 async function write(text, speed=30, result="") {
     window.blink = false
     window.writing = true
+    if (document.getElementById("cmd").children.length > 10) document.querySelector("#cmd li:first-child").remove()
     cmd.children[cmd.children.length - 1].innerHTML = cmd.children[cmd.children.length - 1].innerHTML.slice(0, -1) + text[0] + "_"
     if(text.length - 1) {
         setTimeout(function(){ write(text.slice(1), speed, result) }, speed)
@@ -64,6 +83,7 @@ async function write(text, speed=30, result="") {
 
 async function setTab(tab) {
     if(tab != window.currentTab && !window.writing) {
+        document.querySelector('#wrapper').style.overflow = "hidden" 
         scrollToTop()
         window.tabs[window.currentTab].style.backgroundColor = ""
         // let titre = document.querySelector(`#page${window.currentTab} > h1`)
@@ -104,6 +124,7 @@ async function setTab(tab) {
             document.getElementById("wave").style.display = "flex"
             titre.classList.add("enterLeft")
             titre.style.display = ""
+            document.querySelector('#wrapper').style.overflow = ""
             // document.querySelector("#page0").classList.add("enterLeft")
             for (let i = 0; i < lines.length; i++) {
                 lines[i].style.opacity = "0"
@@ -115,7 +136,7 @@ async function setTab(tab) {
             newpage.style.display = "flex"
             // pb : le code commenté en dessous marche mais le flex ne se met qu'à 100% donc certaines parties peuvent être coupées et mises en scroll en fonction de la largeur
             let isPageOverflowing = newpage.getBoundingClientRect().bottom > window.innerHeight /* document.getElementById("console").getBoundingClientRect().bottom */ // not perfect
-            console.log(isPageOverflowing)
+            //console.log(isPageOverflowing)
             newpage.style.flexBasis = isPageOverflowing ? "auto" : "0"
             document.querySelector("#wrapper > section").style.height = isPageOverflowing ? "" : "100%"
             document.getElementById("bottomFill").style.display = ""

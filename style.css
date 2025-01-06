@@ -206,7 +206,11 @@ table {
     --tabPassiveCol: #424242;
     --tabHoverCol: #535353;
     --tabActiveCol: #7e7e7e;
-    --waveMainCol: #63b9e6;
+    --mainColor: #63b9e6;
+    --hueRotation: 0deg;
+    --coloredElement: rgba(100, 100, 100, 0.35);
+    --lightColoredElem: rgba(100, 100, 100, 0.15);
+    --darkColoredElem: rgba(100, 100, 100, 0.55);
 }
 
 
@@ -247,14 +251,14 @@ body {
     width: 4em;
     height: 4em;
     border-radius: .5em;
-    background-color: #424242;
+    background-color: var(--tabPassiveCol);
     transition: background-color var(--animSpeed) ease 0ms;
     cursor: pointer;
     z-index: 99;
 }
 
 #up:hover {
-    background-color: #535353;
+    background-color: var(--tabHoverCol);
 }
 
 #up > img {
@@ -379,7 +383,7 @@ body {
     font-family: "hack";
     list-style-type: none;
     font-size: 1.2em;
-    height: 11.2em;
+    height: 11.42em;
     margin-top: 20px;
     padding-left: 2em;
     scroll-behavior: smooth;
@@ -430,6 +434,14 @@ section::-webkit-scrollbar {
     z-index: 10;
 }
 
+section > * {
+    filter: hue-rotate(var(--hueRotation))
+}
+
+article > * {
+    filter: hue-rotate(calc(360deg - var(--hueRotation)))
+}
+
 article {
     display: flex;
     align-items: center;
@@ -461,7 +473,7 @@ a {
 .content {
     z-index: 10;
     /* transform: translateY(-20em); */
-    background-color: #63b9e6;
+    background-color: var(--mainColor);
 }
 
 .content > h1, #wavecontainer > h1 {
@@ -504,7 +516,7 @@ a {
     text-align: center;
     padding: 1em;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--coloredElement);
     cursor: pointer;
     min-width: 200px;
     max-width: 1000px;
@@ -516,7 +528,7 @@ a {
 
 #page1 > figure:hover {
     box-shadow: -10px 10px 5px rgba(0, 0, 0, 0.3);
-    background-color: rgba(127, 127, 127, 0.3);
+    background-color: var(--lightColoredElem);
     margin-top: -1em;
 }
 
@@ -531,8 +543,8 @@ a {
 
 object {
     border-radius: 0.5em;
-    width: 95vw;
-    height: 50em;
+    width: 90vw;
+    height: 90vh;
     margin-top: 1em;
 }
 
@@ -547,8 +559,8 @@ object {
     justify-self: center;
     font-size: 1.5em;
     color: #fff;
-    background-color: #0d6efd;
-    border: 1px solid #0d6efd;
+    background-color: var(--coloredElement);
+    border: 1px solid var(--coloredElement);
     border-radius: 0.375rem;
     padding: 0.375rem 0.75rem;
     cursor: pointer;
@@ -556,8 +568,8 @@ object {
 }
 
 #page2 > a > button:hover {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
+    background-color: var(--darkColoredElem);
+    border-color: var(--darkColoredElem);
 }
 
 #page3 {
@@ -594,7 +606,7 @@ object {
 #bottomFill {
     flex: 1 0 auto;
     z-index: 2;
-    background-color: var(--waveMainCol);
+    background-color: var(--mainColor);
 }
 
 .enter {
