@@ -47,17 +47,8 @@ table {
 	border-spacing: 0;
 }
 
-
 @font-face {
-    font-family: 'izayoi';
-    src: url('polices/izayoimonospaced-nwoy-webfont.woff2') format('woff2'),
-         url('polices/izayoimonospaced-nwoy-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'hack';
+    font-family: 'Hack';
     src: url('polices/hack-bold-webfont.woff2') format('woff2'),
          url('polices/hack-bold-webfont.woff') format('woff');
     font-weight: bold;
@@ -65,7 +56,7 @@ table {
 }
 
 @font-face {
-    font-family: 'hack';
+    font-family: 'Hack';
     src: url('polices/hack-bolditalic-webfont.woff2') format('woff2'),
          url('polices/hack-bolditalic-webfont.woff') format('woff');
     font-weight: bold;
@@ -73,7 +64,7 @@ table {
 }
 
 @font-face {
-    font-family: 'hack';
+    font-family: 'Hack';
     src: url('polices/hack-italic-webfont.woff2') format('woff2'),
          url('polices/hack-italic-webfont.woff') format('woff');
     font-weight: normal;
@@ -81,7 +72,7 @@ table {
 }
 
 @font-face {
-    font-family: 'hack';
+    font-family: 'Hack';
     src: url('polices/hack-regular-webfont.woff2') format('woff2'),
          url('polices/hack-regular-webfont.woff') format('woff');
     font-weight: normal;
@@ -137,69 +128,20 @@ table {
 }
 
 @font-face {
-    font-family: 'tahoma';
-    src: url('polices/tahoma_regular_font-webfont.woff2') format('woff2'),
-         url('polices/tahoma_regular_font-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'tahoma';
-    src: url('polices/tahomabd-webfont.woff2') format('woff2'),
-         url('polices/tahomabd-webfont.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'futura';
+    font-family: 'Futura';
     src: url('polices/futura_medium_bt-webfont.woff2') format('woff2'),
          url('polices/futura_medium_bt-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-/*
-@font-face {
-    font-family: 'futura';
-    src: url('polices/futura_light_font-webfont.woff2') format('woff2'),
-         url('polices/futura_light_font-webfont.woff') format('woff');
-    font-weight: lighter;
-    font-style: normal;
-}
 
 @font-face {
-    font-family: 'futura';
-    src: url('polices/futura_light_italic_font-webfont.woff2') format('woff2'),
-         url('polices/futura_light_italic_font-webfont.woff') format('woff');
-    font-weight: lighter;
-    font-style: italic;
-}
-*/
-@font-face {
-    font-family: 'futura';
+    font-family: 'Futura';
     src: url('polices/futura_medium_italic_font-webfont.woff2') format('woff2'),
          url('polices/futura_medium_italic_font-webfont.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }
-/*
-@font-face {
-    font-family: 'futura';
-    src: url('polices/futura_bold_font-webfont.woff2') format('woff2'),
-         url('polices/futura_bold_font-webfont.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'futura';
-    src: url('polices/futura_bold_italic_font-webfont.woff2') format('woff2'),
-         url('polices/futura_bold_italic_font-webfont.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-}
-*/
 
 :root {
     --animSpeed: 0.4s;
@@ -219,7 +161,7 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-family: Tahoma;
+    font-family: "Futura";
     scroll-behavior: smooth;
 }
 
@@ -324,7 +266,7 @@ body {
 }
 
 .tab > a {
-    font-family: "hack";
+    font-family: "Hack";
     font-style: normal;
     font-weight: 400;
     font-size: 23px;
@@ -380,7 +322,7 @@ body {
 }
 
 #cmd {
-    font-family: "hack";
+    font-family: "Hack";
     list-style-type: none;
     font-size: 1.2em;
     height: 11.42em;
@@ -456,7 +398,7 @@ article {
     height: 100%;
     padding: 1em;
     color: white;
-    font-family: "futura";
+    font-family: "Futura";
     font-weight: normal;
     font-size: 1.5vw;
     text-align: justify;
