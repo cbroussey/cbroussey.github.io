@@ -208,9 +208,9 @@ table {
     --tabActiveCol: #7e7e7e;
     --mainColor: #63b9e6;
     --hueRotation: 0deg;
-    --coloredElement: rgba(0, 0, 255, 0.3);
-    --lightColoredElem: rgba(0, 0, 255, 0.15);
-    --darkColoredElem: rgba(0, 0, 255, 0.4);
+    --coloredElement: rgba(100, 100, 100, 0.35);
+    --lightColoredElem: rgba(100, 100, 100, 0.15);
+    --darkColoredElem: rgba(100, 100, 100, 0.55);
 }
 
 
@@ -383,7 +383,7 @@ body {
     font-family: "hack";
     list-style-type: none;
     font-size: 1.2em;
-    height: 11.2em;
+    height: 11.42em;
     margin-top: 20px;
     padding-left: 2em;
     scroll-behavior: smooth;
@@ -543,8 +543,8 @@ a {
 
 object {
     border-radius: 0.5em;
-    width: 95vw;
-    height: 50em;
+    width: 90vw;
+    height: 90vh;
     margin-top: 1em;
 }
 
