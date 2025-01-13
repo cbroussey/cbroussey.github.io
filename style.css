@@ -476,13 +476,19 @@ a {
     margin-top: -1em;
 }
 
+#page1 > figure > p {
+    height: 2em;
+    margin-bottom: .5em;
+    align-content: center;
+}
+
 #page1 > figure > img {
     width: 100%;
     height: 100%;
 }
 
 #page1 > figure > figcaption {
-    font-size: 15px;
+    font-size: 1em;
 }
 
 #page1 > p:last-child {
@@ -550,7 +556,7 @@ object {
     display: inline-block;
     margin: 1em;
     width: 300%;
-    font-size: 2vw;
+    font-size: calc(3em - 2vw);
 }
 
 #bottomFill {
@@ -631,7 +637,7 @@ object {
     }
     
     #page0 > p {
-        font-size: 2vw;
+        font-size: 2.2vw;
     }
 }
 
@@ -645,11 +651,19 @@ object {
     }
 
     #page0 > img + p {
-        font-size: 3vw;
+        font-size: calc(4em - 3vw);
     }
     
     #page0 > p {
-        font-size: 2.7vw;
+        font-size: calc(3.7em - 2.7vw);
+    }
+
+    #page1 > figure > p {
+        font-size: 2em;
+    }
+
+    #page1 > figure > figcaption {
+        font-size: 1.8em
     }
 
     #page2 > a > button {
