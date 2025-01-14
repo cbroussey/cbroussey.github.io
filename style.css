@@ -498,6 +498,11 @@ a {
     text-decoration: none;
 }
 
+#page1 > a:last-child:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 object {
     border-radius: 0.5em;
     width: 90vw;
