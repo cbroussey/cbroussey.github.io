@@ -161,6 +161,34 @@ function hamburgerMenu(open) {
     }
 }
 
+function displayPopup(popupSelector) {
+    document.querySelector("#wrapper").style.overflow = "hidden" // Prevent scrolling
+    document.querySelector("#shadow").style.display = "block"
+    setTimeout(() => {
+        document.querySelector("#shadow").style.opacity = ".5"
+    }, 50);
+
+    document.querySelector("#shadow").onclick = () => {
+        document.getElementById("shadow").addEventListener("transitionend", f => {
+            document.querySelector("#shadow").style.display = "none"
+            document.querySelector("#wrapper").style.overflow = "auto" // Restore scrolling
+        }, {once: true})
+        document.querySelector(popupSelector).addEventListener("transitionend", f => {
+            document.querySelector(popupSelector).style.display = "none"
+        }, {once: true})
+        document.querySelector("#shadow").style.opacity = "0"
+        document.querySelector(popupSelector).style.transform = ""
+        document.querySelector(popupSelector).style.opacity = "0"
+    }
+
+    document.querySelector(popupSelector).style.display = "block"
+    setTimeout(() => {
+        document.querySelector(popupSelector).style.display = "flex"
+        document.querySelector(popupSelector).style.opacity = "1"
+        document.querySelector(popupSelector).style.transform = "translateY(0)"
+    }, 50);
+}
+
 function goToContent() {
     if (!window.writing) {
         write('more');

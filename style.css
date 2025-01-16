@@ -503,6 +503,11 @@ a {
     font-size: 1em;
 }
 
+#page1 > button:last-of-type {
+    font-size: 1em;
+    margin: .5em;
+}
+
 #page1 > a:last-child {
     width: 100%;
     text-align: center;
@@ -529,7 +534,7 @@ object {
     text-decoration: none;
 }
 
-#page2 > a > button {
+button {
     align-self: center;
     justify-self: center;
     font-size: 1.5em;
@@ -542,7 +547,7 @@ object {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-#page2 > a > button:hover {
+button:hover {
     background-color: var(--darkColoredElem);
     border-color: var(--darkColoredElem);
 }
@@ -582,6 +587,43 @@ object {
     flex: 1 0 auto;
     z-index: 2;
     background-color: var(--mainColor);
+}
+
+#shadow {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #000;
+    transition: opacity var(--animSpeed) ease-in;
+}
+
+.popup {
+    display: none;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    position: fixed;
+    opacity: 0;
+    border-radius: 1em;
+    margin: auto;
+    padding: 1em;
+    background-color: white;
+    transform: translateY(30%);
+    transition: opacity var(--animSpeed) ease-in, transform var(--animSpeed) ease-out;
+}
+
+.popup > div {
+    display: flex;
+}
+
+#projectsPopup {
+    width: 80%;
+    height: 85%;
+    top: 5%;
+    left: 10%;
 }
 
 .enter {

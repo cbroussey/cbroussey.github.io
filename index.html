@@ -121,7 +121,7 @@
                         <figcaption>Réalisation d'un site web</figcaption>
                     </figure>
 
-                    <!-- <button>Tous les projets</button> -->
+                    <button onclick="displayPopup('#projectsPopup')">Tous les projets</button>
 
                     <a onclick="window.open('https://github.com/cbroussey/cbroussey.github.io')">Et ce site qui a été entièrement codé par moi :)</a>
                 </article>
@@ -168,6 +168,11 @@
         </div>
         <div id="up" onclick="scrollToTop()" style="display: none;">
             <img src="images/minimize.svg">
+        </div>
+
+        <div id="shadow"></div>
+        <div id="projectsPopup" class="popup">
+            <div></div>
         </div>
     </body>
 </html>
